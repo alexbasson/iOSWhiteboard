@@ -12,7 +12,7 @@
 		FAD452EF1D2858B100217BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD452ED1D2858B100217BB2 /* Main.storyboard */; };
 		FAD452F11D2858B100217BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD452F01D2858B100217BB2 /* Assets.xcassets */; };
 		FAD452F41D2858B100217BB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD452F21D2858B100217BB2 /* LaunchScreen.storyboard */; };
-		FAD452FF1D2858B100217BB2 /* iOSWhiteboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD452FE1D2858B100217BB2 /* iOSWhiteboardTests.swift */; };
+		FAD4530B1D28590900217BB2 /* Whiteboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD4530A1D28590900217BB2 /* Whiteboard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +34,8 @@
 		FAD452F31D2858B100217BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD452F51D2858B100217BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD452FA1D2858B100217BB2 /* iOSWhiteboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSWhiteboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAD452FE1D2858B100217BB2 /* iOSWhiteboardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSWhiteboardTests.swift; sourceTree = "<group>"; };
 		FAD453001D2858B100217BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD4530A1D28590900217BB2 /* Whiteboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Whiteboard.framework; path = ../Whiteboard/build/Debug/Whiteboard.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD4530B1D28590900217BB2 /* Whiteboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +63,7 @@
 				FAD452E81D2858B100217BB2 /* iOSWhiteboard */,
 				FAD452FD1D2858B100217BB2 /* iOSWhiteboardTests */,
 				FAD452E71D2858B100217BB2 /* Products */,
+				FAD453091D28590900217BB2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,10 +92,17 @@
 		FAD452FD1D2858B100217BB2 /* iOSWhiteboardTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAD452FE1D2858B100217BB2 /* iOSWhiteboardTests.swift */,
 				FAD453001D2858B100217BB2 /* Info.plist */,
 			);
 			path = iOSWhiteboardTests;
+			sourceTree = "<group>";
+		};
+		FAD453091D28590900217BB2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAD4530A1D28590900217BB2 /* Whiteboard.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,7 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD452FF1D2858B100217BB2 /* iOSWhiteboardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
