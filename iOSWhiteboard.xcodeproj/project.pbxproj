@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		FAD452EA1D2858B100217BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD452E91D2858B100217BB2 /* AppDelegate.swift */; };
-		FAD452EC1D2858B100217BB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD452EB1D2858B100217BB2 /* ViewController.swift */; };
 		FAD452EF1D2858B100217BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD452ED1D2858B100217BB2 /* Main.storyboard */; };
 		FAD452F11D2858B100217BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD452F01D2858B100217BB2 /* Assets.xcassets */; };
 		FAD452F41D2858B100217BB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD452F21D2858B100217BB2 /* LaunchScreen.storyboard */; };
 		FAD4530B1D28590900217BB2 /* Whiteboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD4530A1D28590900217BB2 /* Whiteboard.framework */; };
+		FAD4532D1D285E0200217BB2 /* WhiteboardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD4532C1D285E0200217BB2 /* WhiteboardsViewController.swift */; };
+		FAD453321D285EB300217BB2 /* UIViewController+RenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD453311D285EB300217BB2 /* UIViewController+RenderView.swift */; };
+		FAD453341D285EDF00217BB2 /* WhiteboardsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD453331D285EDF00217BB2 /* WhiteboardsViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +30,6 @@
 /* Begin PBXFileReference section */
 		FAD452E61D2858B100217BB2 /* iOSWhiteboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWhiteboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD452E91D2858B100217BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAD452EB1D2858B100217BB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FAD452EE1D2858B100217BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAD452F01D2858B100217BB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD452F31D2858B100217BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +37,9 @@
 		FAD452FA1D2858B100217BB2 /* iOSWhiteboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSWhiteboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD453001D2858B100217BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAD4530A1D28590900217BB2 /* Whiteboard.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Whiteboard.framework; path = ../Whiteboard/build/Debug/Whiteboard.framework; sourceTree = "<group>"; };
+		FAD4532C1D285E0200217BB2 /* WhiteboardsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteboardsViewController.swift; sourceTree = "<group>"; };
+		FAD453311D285EB300217BB2 /* UIViewController+RenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+RenderView.swift"; sourceTree = "<group>"; };
+		FAD453331D285EDF00217BB2 /* WhiteboardsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteboardsViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +83,8 @@
 		FAD452E81D2858B100217BB2 /* iOSWhiteboard */ = {
 			isa = PBXGroup;
 			children = (
+				FAD4532B1D285DD300217BB2 /* Controllers */,
 				FAD452E91D2858B100217BB2 /* AppDelegate.swift */,
-				FAD452EB1D2858B100217BB2 /* ViewController.swift */,
 				FAD452ED1D2858B100217BB2 /* Main.storyboard */,
 				FAD452F01D2858B100217BB2 /* Assets.xcassets */,
 				FAD452F21D2858B100217BB2 /* LaunchScreen.storyboard */,
@@ -92,6 +96,8 @@
 		FAD452FD1D2858B100217BB2 /* iOSWhiteboardTests */ = {
 			isa = PBXGroup;
 			children = (
+				FAD4532E1D285E5E00217BB2 /* Controllers */,
+				FAD4532F1D285E7600217BB2 /* Helpers */,
 				FAD453001D2858B100217BB2 /* Info.plist */,
 			);
 			path = iOSWhiteboardTests;
@@ -103,6 +109,38 @@
 				FAD4530A1D28590900217BB2 /* Whiteboard.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAD4532B1D285DD300217BB2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAD4532C1D285E0200217BB2 /* WhiteboardsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAD4532E1D285E5E00217BB2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FAD453331D285EDF00217BB2 /* WhiteboardsViewControllerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FAD4532F1D285E7600217BB2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FAD453301D285E8C00217BB2 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FAD453301D285E8C00217BB2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FAD453311D285EB300217BB2 /* UIViewController+RenderView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +197,7 @@
 					};
 					FAD452F91D2858B100217BB2 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = FAD452E51D2858B100217BB2;
 					};
@@ -208,8 +247,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAD452EC1D2858B100217BB2 /* ViewController.swift in Sources */,
 				FAD452EA1D2858B100217BB2 /* AppDelegate.swift in Sources */,
+				FAD4532D1D285E0200217BB2 /* WhiteboardsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD453321D285EB300217BB2 /* UIViewController+RenderView.swift in Sources */,
+				FAD453341D285EDF00217BB2 /* WhiteboardsViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,10 +406,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iOSWhiteboardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.conditionallyconvergent.iOSWhiteboardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSWhiteboard.app/iOSWhiteboard";
 			};
@@ -378,6 +421,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = iOSWhiteboardTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.conditionallyconvergent.iOSWhiteboardTests;

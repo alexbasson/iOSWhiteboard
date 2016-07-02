@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11129.15" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11103.10"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Whiteboards View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WhiteboardsViewController" id="BYZ-38-t0r" customClass="WhiteboardsViewController" customModule="iOSWhiteboard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validation Errors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aui-5Z-SwR">
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpx-KJ-3Wf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mgw-iY-PPt">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFf-QC-eDm">
+                                <state key="normal" title="Create New Whiteboard"/>
+                                <connections>
+                                    <action selector="submitButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qyp-yf-1yN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created whiteboard with ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJ7-uI-tMn">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FVW-1W-ro8">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MJ7-uI-tMn" firstAttribute="top" secondItem="MFf-QC-eDm" secondAttribute="bottom" constant="23" id="1cm-qk-uRc"/>
+                            <constraint firstItem="FVW-1W-ro8" firstAttribute="top" secondItem="MJ7-uI-tMn" secondAttribute="bottom" constant="8" id="9Xs-QK-yYB"/>
+                            <constraint firstItem="MFf-QC-eDm" firstAttribute="top" secondItem="mgw-iY-PPt" secondAttribute="bottom" constant="8" id="DMs-QQ-hwO"/>
+                            <constraint firstItem="MJ7-uI-tMn" firstAttribute="leading" secondItem="zpx-KJ-3Wf" secondAttribute="leading" id="NAP-0e-Z8M"/>
+                            <constraint firstItem="zpx-KJ-3Wf" firstAttribute="top" secondItem="Aui-5Z-SwR" secondAttribute="bottom" constant="8" id="UmB-ht-7Cj"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="zpx-KJ-3Wf" secondAttribute="leading" id="VRt-fB-tUI"/>
+                            <constraint firstItem="mgw-iY-PPt" firstAttribute="leading" secondItem="zpx-KJ-3Wf" secondAttribute="trailing" constant="8" id="YUX-ZI-dQS"/>
+                            <constraint firstItem="zpx-KJ-3Wf" firstAttribute="leading" secondItem="Aui-5Z-SwR" secondAttribute="leading" id="bPn-UA-Gxh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mgw-iY-PPt" secondAttribute="trailing" id="ehV-gD-4fZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="MFf-QC-eDm" secondAttribute="leading" id="gRJ-Dc-dKa"/>
+                            <constraint firstItem="zpx-KJ-3Wf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="iC0-4o-n3Z"/>
+                            <constraint firstItem="zpx-KJ-3Wf" firstAttribute="baseline" secondItem="mgw-iY-PPt" secondAttribute="baseline" id="po4-gg-wLI"/>
+                            <constraint firstItem="FVW-1W-ro8" firstAttribute="leading" secondItem="MJ7-uI-tMn" secondAttribute="leading" id="yY4-35-iDB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MFf-QC-eDm" secondAttribute="trailing" id="yg5-FZ-ybM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="mgw-iY-PPt" id="PBR-7E-XFu"/>
+                        <outlet property="newlyCreatedWhiteboardIDLabel" destination="FVW-1W-ro8" id="Oqs-hV-53S"/>
+                        <outlet property="submitButton" destination="MFf-QC-eDm" id="wYV-vM-5NU"/>
+                        <outlet property="validationErrorLabel" destination="Aui-5Z-SwR" id="h46-9c-Llo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="39.130434782608695"/>
         </scene>
     </scenes>
 </document>
