@@ -41,12 +41,12 @@ class WhiteboardsViewControllerTests: XCTestCase {
         subject.state.id = "some id"
         XCTAssertTrue(subject.validationErrorLabel!.isHidden)
 
-        let error = WhiteboardError.Validation(field: "a field", validation: "a validation")
+        let error = WhiteboardError.Validation(field: .Name, validation: .Unique)
         subject.validationFailed(errors: [error])
 
         XCTAssertFalse(subject.validationErrorLabel!.isHidden)
         XCTAssertTrue(subject.newlyCreatedWhiteboardIDLabel!.isHidden)
 
-        XCTAssertEqual(subject.validationErrorLabel!.text!, "a field must be a validation")
+        XCTAssertEqual(subject.validationErrorLabel!.text!, "name must be unique")
     }
 }

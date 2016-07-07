@@ -51,14 +51,9 @@ extension WhiteboardsViewController {
         if let newlyCreatedWhiteboardIDLabel = newlyCreatedWhiteboardIDLabel,
             validationErrorLabel = validationErrorLabel {
             if let error = state.error {
-                switch (error) {
-                case .Validation(let field, let validation):
-                    validationErrorLabel.text = "\(field) must be \(validation)"
-                    validationErrorLabel.isHidden = false
-                    newlyCreatedWhiteboardIDLabel.isHidden = true
-                default:
-                    return
-                }
+                validationErrorLabel.text = WhiteboardErrorFormatter().formattedError(error: error)
+                validationErrorLabel.isHidden = false
+                newlyCreatedWhiteboardIDLabel.isHidden = true
             } else if let id = state.id {
                 newlyCreatedWhiteboardIDLabel.text = id
                 newlyCreatedWhiteboardIDLabel.isHidden = false
@@ -69,4 +64,23 @@ extension WhiteboardsViewController {
             }
         }
     }
+}
+
+class WhiteboardErrorFormatter {
+
+    func formattedError(error: WhiteboardError) -> String {
+        switch (error) {
+        case .Validation(let field, let validation):
+            switch (field) {
+            case .Name:
+                switch (validation) {
+                case .Unique: return "name must be unique"
+                case .Required: return "name is required"
+                }
+            }
+        default:
+            return ""
+        }
+    }
+
 }
