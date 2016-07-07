@@ -3,7 +3,7 @@ import Whiteboard
 
 struct State {
     var id: String?
-    var error: WhiteboardValidationError?
+    var error: WhiteboardError?
 }
 
 class WhiteboardsViewController: UIViewController {
@@ -22,7 +22,7 @@ class WhiteboardsViewController: UIViewController {
 }
 
 extension WhiteboardsViewController: Gui {
-    func validationFailed(errors: [WhiteboardValidationError]) {
+    func validationFailed(errors: [WhiteboardError]) {
         state.id = nil
         state.error = errors.first
         render()
@@ -51,9 +51,14 @@ extension WhiteboardsViewController {
         if let newlyCreatedWhiteboardIDLabel = newlyCreatedWhiteboardIDLabel,
             validationErrorLabel = validationErrorLabel {
             if let error = state.error {
-                validationErrorLabel.text = "\(error.field) must be \(error.validation)"
-                validationErrorLabel.isHidden = false
-                newlyCreatedWhiteboardIDLabel.isHidden = true
+                switch (error) {
+                case .Validation(let field, let validation):
+                    validationErrorLabel.text = "\(field) must be \(validation)"
+                    validationErrorLabel.isHidden = false
+                    newlyCreatedWhiteboardIDLabel.isHidden = true
+                default:
+                    return
+                }
             } else if let id = state.id {
                 newlyCreatedWhiteboardIDLabel.text = id
                 newlyCreatedWhiteboardIDLabel.isHidden = false

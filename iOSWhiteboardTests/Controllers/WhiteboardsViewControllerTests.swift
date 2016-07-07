@@ -41,7 +41,7 @@ class WhiteboardsViewControllerTests: XCTestCase {
         subject.state.id = "some id"
         XCTAssertTrue(subject.validationErrorLabel!.isHidden)
 
-        let error = WhiteboardValidationError(field: "a field", validation: "a validation")
+        let error = WhiteboardError.Validation(field: "a field", validation: "a validation")
         subject.validationFailed(errors: [error])
 
         XCTAssertFalse(subject.validationErrorLabel!.isHidden)
