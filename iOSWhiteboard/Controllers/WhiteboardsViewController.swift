@@ -51,7 +51,7 @@ extension WhiteboardsViewController {
         if let newlyCreatedWhiteboardIDLabel = newlyCreatedWhiteboardIDLabel,
             validationErrorLabel = validationErrorLabel {
             if let error = state.error {
-                validationErrorLabel.text = WhiteboardErrorFormatter().formattedError(error: error)
+                validationErrorLabel.text = error.toString()
                 validationErrorLabel.isHidden = false
                 newlyCreatedWhiteboardIDLabel.isHidden = true
             } else if let id = state.id {
@@ -66,10 +66,9 @@ extension WhiteboardsViewController {
     }
 }
 
-class WhiteboardErrorFormatter {
-
-    func formattedError(error: WhiteboardError) -> String {
-        switch (error) {
+extension WhiteboardError {
+    func toString() -> String {
+        switch (self) {
         case .Validation(let field, let validation):
             switch (field) {
             case .Name:
