@@ -14,7 +14,7 @@ class WhiteboardsViewController: UIViewController {
     @IBOutlet var newlyCreatedWhiteboardIDLabel: UILabel?
 
     var state = State()
-    var whiteboardRepository: WhiteboardRepository = WhiteboardRepositoryFake()
+    var whiteboardRepository: WhiteboardRepository = WhiteboardRepositories.FlatFile()
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
