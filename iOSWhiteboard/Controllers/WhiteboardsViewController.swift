@@ -1,5 +1,6 @@
 import UIKit
 import Whiteboard
+import WhiteboardRepositories
 
 struct State {
     var id: String?

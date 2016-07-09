@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FAAF561C1D3173B80070B9F0 /* WhiteboardRepositories.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAAF561B1D3173B80070B9F0 /* WhiteboardRepositories.framework */; };
 		FAD452EA1D2858B100217BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD452E91D2858B100217BB2 /* AppDelegate.swift */; };
 		FAD452EF1D2858B100217BB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD452ED1D2858B100217BB2 /* Main.storyboard */; };
 		FAD452F11D2858B100217BB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD452F01D2858B100217BB2 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FAAF561B1D3173B80070B9F0 /* WhiteboardRepositories.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WhiteboardRepositories.framework; path = "../../../Library/Developer/Xcode/DerivedData/HexagonalSwift-clcokowcjotujmczlqvgihcuwhoi/Build/Products/Debug/WhiteboardRepositories.framework"; sourceTree = "<group>"; };
 		FAD452E61D2858B100217BB2 /* iOSWhiteboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSWhiteboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD452E91D2858B100217BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD452EE1D2858B100217BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAD4530B1D28590900217BB2 /* Whiteboard.framework in Frameworks */,
+				FAAF561C1D3173B80070B9F0 /* WhiteboardRepositories.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +109,7 @@
 		FAD453091D28590900217BB2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAAF561B1D3173B80070B9F0 /* WhiteboardRepositories.framework */,
 				FAD4530A1D28590900217BB2 /* Whiteboard.framework */,
 			);
 			name = Frameworks;
